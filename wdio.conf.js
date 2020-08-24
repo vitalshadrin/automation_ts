@@ -1,4 +1,4 @@
-const baseUrl = 'https://webdriver.io';
+const baseUrl = 'https://the-internet.herokuapp.com/';
 
 exports.config = {
     //
@@ -23,7 +23,7 @@ exports.config = {
     // hostname: '172.18.5.185',
     // port: 4444,
     // path: '/wd/hub',
-    
+
     //
     // ==================
     // Specify Test Files
@@ -34,7 +34,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './test/**/*.ts'
+        './test/home.page.spec.ts'
     ],
     // Patterns to exclude.
     exclude: [
@@ -62,21 +62,20 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://docs.saucelabs.com/reference/platforms-configurator
     //
-    capabilities: [
-        {
+    capabilities: [{
             // maxInstances can get overwritten per capability. So if you have an in-house Selenium
             // grid with only 5 firefox instances available you can make sure that not more than
             // 5 instances get started at a time.
-            maxInstances: 5,
+            maxInstances: 1,
             //
-            browserName: 'chrome',            
+            browserName: 'chrome',
             'goog:chromeOptions': {
                 // to run chrome headless the following flags are required
                 // (see https://developers.google.com/web/updates/2017/04/headless-chrome)
                 args: [
                     //'--headless', 
                     '--disable-gpu'
-                ]                
+                ]
             }
         },
         // {
@@ -143,8 +142,8 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter.html
-    reporters: ['spec','allure'],
-    
+    reporters: ['spec', 'allure'],
+
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
@@ -186,9 +185,10 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
-    before: function (capabilities, specs) {
+    before: function(capabilities, specs) {
         // require('ts-node/register');        
         require('ts-node').register({ files: true });
+        browser.url(baseUrl);
     },
     /**
      * Runs before a WebdriverIO command gets executed.
@@ -197,7 +197,7 @@ exports.config = {
      */
     // beforeCommand: function (commandName, args) {
     // },
-    
+
     /**
      * Hook that gets executed before the suite starts
      * @param {Object} suite suite details
@@ -226,11 +226,11 @@ exports.config = {
      * Function to be executed after a test (in Mocha/Jasmine) or a step (in Cucumber) starts.
      * @param {Object} test test details
      */
-    afterTest: function (test) {        
+    afterTest: function(test) {
         if (test.error !== undefined) {
             let name = 'ERROR-' + Date.now();
             browser.saveScreenshot('./errorShots/' + name + '.png');
-        }        
+        }
     },
     /**
      * Hook that gets executed after the suite has ended
@@ -238,7 +238,7 @@ exports.config = {
      */
     // afterSuite: function (suite) {
     // },
-    
+
     /**
      * Runs after a WebdriverIO command gets executed
      * @param {String} commandName hook command name

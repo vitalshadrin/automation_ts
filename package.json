@@ -11,9 +11,8 @@
     "typescript"
   ],
   "author": {
-    "name": "Dale Nguyen",
-    "email": "dungnq@itbox4vn.com",
-    "url": "http://dalenguyen.me"
+    "name": "Vitali Shadrin",
+    "email": "vshadrin@exadel.com"
   },
   "license": "ISC",
   "devDependencies": {
