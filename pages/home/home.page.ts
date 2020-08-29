@@ -3,9 +3,10 @@ import { expect } from "chai";
 import { homePage } from "dictionary.json";
 
 class HomePage extends AbstractPage {
-  private title: WebdriverIO.Element = $("//h1");
-  private subTitle: WebdriverIO.Element = $("//h2");
-  private footer: WebdriverIO.Element = $("//a[@target]");
+  private get title() { return $('//h1') }
+  private get subTitle() {return $("//h2")};
+  private get footer() {return $("//a[@target]")};
+
   private get_element(page: String): WebdriverIO.Element {
     return $("//a[text()='" + page + "']");
   }
@@ -15,7 +16,6 @@ class HomePage extends AbstractPage {
   }
 
   verify_title_is_exist(): void {
-    console.log(this.title.isEnabled());
     this.verify_element_by_text(this.title, homePage.title);
   }
 
