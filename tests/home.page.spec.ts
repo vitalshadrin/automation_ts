@@ -15,12 +15,14 @@ describe("Verify home page", function() {
   });
 
   it("Verify page body elemets is exists ", () => {
-    for (let page in Pages) {
-      homepage.verify_body_is_exist(Pages[page]);
-    }
+    homepage.verify_body_is_exist();
   });
 
   it("Verify page footer", () => {
     homepage.verify_footer_is_exist();
+  });
+
+  it("Click on elemet AB", () => {
+    homepage.click_on_element(Pages.AB);
   });
 });

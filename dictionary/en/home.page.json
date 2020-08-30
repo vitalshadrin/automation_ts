@@ -1,0 +1,20 @@
+{
+    "homePageDictionary": {
+        "title": "Welcome to the-internet",
+        "subTitle": "Available Examples",
+        "footer": "Elemental Selenium",
+        "body": [{
+                "key": "AB",
+                "value": "A/B Testing"
+            },
+            {
+                "key": "ADD_REMOVE",
+                "value": "Add/Remove Elements"
+            },
+            {
+                "key": "BASIC_AUTH",
+                "value": "Basic Auth"
+            }
+        ]
+    }
+}

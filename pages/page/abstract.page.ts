@@ -20,6 +20,14 @@ export default class AbstractPage {
     expect(element.getText()).to.be.eq(expected);
   }
 
+  verify_element_enabled(element: WebdriverIO.Element): void {
+    expect(this.is_element_enabled(element)).to.be.true;
+  }
+
+  verify_element_disabled(element: WebdriverIO.Element): void {
+    expect(this.is_element_displayed(element)).to.be.true;
+  }
+
   is_element_displayed(element: WebdriverIO.Element): boolean {
     return element.isDisplayed() ? true : false;
   }

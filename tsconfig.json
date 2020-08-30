@@ -15,12 +15,12 @@
                 "*": [ "./*" ],
                 "pages/*": ["./pages/*"],
                 "models/*": ["./models/*"],
-                "test/*": ["./test/*"],
+                "test/*": ["tests/*"],
         },
         "types": ["@wdio/mocha-framework", "node", "chai", "@wdio/sync"]
     },    
     "include": [
-        "./test/**/*.ts"
+        "tests/**/*.ts"
     ],
     "exclude": [
       "./node_modules"
