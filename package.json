@@ -1,5 +1,5 @@
 {
-    "name": "webdriverio-typescript-boilerplate",
+    "name": "automation_template",
     "version": "1.0.1",
     "description": "This project will show you how to start your UI Automation Test with WebdriverIO and TypeScript",
     "main": "index.js",

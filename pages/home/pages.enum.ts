@@ -1,5 +1,5 @@
 export enum Pages {
-  AB ,
-  ADD_REMOVE,
-  BASIC_AUTH
+  AB = 'AB',
+  ADD_REMOVE = 'ADD_REMOVE',
+  BASIC_AUTH = 'BASIC_AUTH'
 }

@@ -31,7 +31,7 @@ class HomePage extends AbstractPage {
   }
 
   verify_body_is_exist(): void {
-    for (let page = 0; page < Object.keys(Pages).length / 2; page++) {
+    for (let page in Pages) {
       expect(
         this.is_element_exist(
           this.get_element(this.get_dictionary_value(Pages[page]))
