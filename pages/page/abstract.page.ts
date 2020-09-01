@@ -20,6 +20,10 @@ export default class AbstractPage {
     expect(element.getText()).to.be.eq(expected);
   }
 
+  get_element_text(element: WebdriverIO.Element): string {
+    return element.getText();
+  }
+
   verify_element_enabled(element: WebdriverIO.Element): void {
     expect(this.is_element_enabled(element)).to.be.true;
   }

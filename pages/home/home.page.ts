@@ -1,4 +1,4 @@
-import AbstractPage from "pages/page/abstract.page";
+import AbstractPage from "../page/abstract.page";
 import { expect, assert } from "chai";
 import { homePage } from "dictionary/en/home.page.json";
 import { Pages } from "./pages.enum";
