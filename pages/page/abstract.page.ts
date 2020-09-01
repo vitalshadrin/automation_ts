@@ -24,6 +24,28 @@ export default class AbstractPage {
     return element.getText();
   }
 
+  get_elements_text(element: WebdriverIO.Element): string[] {
+    let elementsArray = $$(element.selector);
+    let elementsText = [];
+    if (this.is_element_exist(element)) {
+      elementsArray.forEach((elementText) =>
+        elementsText.push(this.get_element_text(elementText))
+      );
+    }
+    return elementsText;
+  }
+
+  get_elements_count(element: WebdriverIO.Element): number {
+    return this.get_elements_text(element).length;
+  }
+
+  verify_elements_count(
+    element: WebdriverIO.Element,
+    elementCount: number
+  ): void {
+    expect(this.get_elements_count(element)).to.be.eq(elementCount);
+  }
+
   verify_element_enabled(element: WebdriverIO.Element): void {
     expect(this.is_element_enabled(element)).to.be.true;
   }

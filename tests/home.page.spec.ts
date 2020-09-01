@@ -1,7 +1,7 @@
 import homepage from "../pages/home/home.page";
 import { Pages } from "pages/home/pages.enum";
 
-describe("Verify home page", function() {
+describe("Verify home page", function () {
   it("Verify page URL", () => {
     homepage.verify_browser_url(browser.options.baseUrl);
   });

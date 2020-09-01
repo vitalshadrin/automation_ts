@@ -1,0 +1,7 @@
+{
+    "addRemove": {
+        "title": "Add/Remove Elements",
+        "addButton": "Add Element",
+        "deleteButton": "Delete"
+    }
+}
