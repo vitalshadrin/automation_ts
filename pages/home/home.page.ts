@@ -1,6 +1,6 @@
 import AbstractPage from "pages/page/abstract.page";
 import { expect, assert } from "chai";
-import { homePageDictionary } from "dictionary/en/home.page.json";
+import { homePage } from "dictionary/en/home.page.json";
 import { Pages } from "./pages.enum";
 
 class HomePage extends AbstractPage {
@@ -23,11 +23,11 @@ class HomePage extends AbstractPage {
   }
 
   verify_title_is_exist(): void {
-    this.verify_element_by_text(this.title, homePageDictionary.title);
+    this.verify_element_by_text(this.title, homePage.title);
   }
 
   verify_sub_title_is_exist(): void {
-    this.verify_element_by_text(this.subTitle, homePageDictionary.subTitle);
+    this.verify_element_by_text(this.subTitle, homePage.subTitle);
   }
 
   verify_body_is_exist(): void {
@@ -41,11 +41,11 @@ class HomePage extends AbstractPage {
   }
 
   verify_footer_is_exist(): void {
-    this.verify_element_by_text(this.footer, homePageDictionary.footer);
+    this.verify_element_by_text(this.footer, homePage.footer);
   }
 
   private get_dictionary_value(property: String): String {
-    let homePageBody = homePageDictionary.body;
+    let homePageBody = homePage.body;
     let elementIndex = homePageBody.findIndex((data) => data.key === property);
     if (elementIndex == -1) {
       assert.fail("Not found key :: " + property + " in dictionary");
